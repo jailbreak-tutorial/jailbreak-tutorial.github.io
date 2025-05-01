@@ -1,0 +1,113 @@
+:root {
+    --primary-orange: #FF6B35;
+    --secondary-orange: #FFA07A;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+}
+
+body {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.hero {
+    background-color: var(--light-gray);
+    padding: 2.5rem 1.5rem 0;
+}
+
+.main-title {
+    color: var(--primary-orange);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.secondary-title {
+    color: var(--primary-orange);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.conference-title {
+    color: var(--text-color);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.abstract {
+    background-color: var(--light-gray);
+    padding: 2.5rem;
+    border-radius: 8px;
+    margin: 1rem auto 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    max-width: 90%;
+}
+
+.abstract h3 {
+    color: var(--primary-orange);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.abstract p {
+    margin-bottom: 1.5rem;
+}
+
+.author-list {
+    margin: 0 0 0.5rem;
+}
+
+.author {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.affiliation {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.affiliation p {
+    margin: 0;
+    display: inline;
+}
+
+.affiliation-symbol {
+    color: var(--primary-orange);
+    font-weight: bold;
+}
+
+.footer {
+    background-color: var(--light-gray);
+    padding: 1.5rem 1.5rem;
+    margin-top: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+em {
+    font-style: italic;
+    color: var(--primary-orange);
+}
+
+em strong {
+    font-weight: bold;
+    color: var(--primary-orange);
+} 
