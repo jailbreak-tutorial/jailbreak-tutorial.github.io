@@ -389,4 +389,41 @@ em strong {
     background-color: var(--primary-orange);
     color: white;
     text-decoration: none;
-} 
+}
+
+.author-headshots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.headshot-container {
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.headshot {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-orange);
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.headshot-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.headshot-affiliation {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}

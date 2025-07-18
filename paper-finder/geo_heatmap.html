@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_29ba5f035011b39bf945cd563cbe105c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_29ba5f035011b39bf945cd563cbe105c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_29ba5f035011b39bf945cd563cbe105c = L.map(
+                "map_29ba5f035011b39bf945cd563cbe105c",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7dc520bb7b6572609c41b285fe362d6e = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7dc520bb7b6572609c41b285fe362d6e.addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+            var heat_map_44699c1f55cf81b97f5c0873b76cc37a = L.heatLayer(
+                [[48.8534951, 2.3483915, 1], [37.427467, -122.1702445, 4], [1.357107, 103.8194992, 1], [40.3496953, -74.6597376, 2], [40.7127281, -74.0060152, 1], [51.4893335, -0.1440551, 1], [42.3582529, -71.0966272, 4], [31.2284923, 121.4021139, 1], [42.3657432, -71.1222139, 1]],
+                {
+  "minOpacity": 0.3,
+  "maxZoom": 6,
+  "radius": 18,
+  "blur": 15,
+  "gradient": {
+  0.2: "blue",
+  0.4: "lime",
+  0.7: "orange",
+  1: "red",
+},
+}
+            );
+        
+    
+            heat_map_44699c1f55cf81b97f5c0873b76cc37a.addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+            var layer_control_67180fac63d0a0ffbc6bdc2cfb893209_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_7dc520bb7b6572609c41b285fe362d6e,
+                },
+                overlays :  {
+                    "macro_element_44699c1f55cf81b97f5c0873b76cc37a" : heat_map_44699c1f55cf81b97f5c0873b76cc37a,
+                },
+            };
+            let layer_control_67180fac63d0a0ffbc6bdc2cfb893209 = L.control.layers(
+                layer_control_67180fac63d0a0ffbc6bdc2cfb893209_layers.base_layers,
+                layer_control_67180fac63d0a0ffbc6bdc2cfb893209_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+
+        
+    
+            var circle_marker_00ba98b4aab3df508d36531db13f66e9 = L.circleMarker(
+                [37.427467, -122.1702445],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_62d1d822c982d5ec464238244820be5e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c774bb804746ef5243ce69926b87fff = $(`<div id="html_9c774bb804746ef5243ce69926b87fff" style="width: 100.0%; height: 100.0%;">Stanford: 4 papers</div>`)[0];
+                popup_62d1d822c982d5ec464238244820be5e.setContent(html_9c774bb804746ef5243ce69926b87fff);
+            
+        
+
+        circle_marker_00ba98b4aab3df508d36531db13f66e9.bindPopup(popup_62d1d822c982d5ec464238244820be5e)
+        ;
+
+        
+    
+    
+            var circle_marker_01e511e66ce6d5d208e09208dba00124 = L.circleMarker(
+                [42.3582529, -71.0966272],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_93421c3caf5bd79b02662c3c27f1ca7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f11bedaea6e168aaa31c12fdd48dfd5 = $(`<div id="html_5f11bedaea6e168aaa31c12fdd48dfd5" style="width: 100.0%; height: 100.0%;">MIT: 4 papers</div>`)[0];
+                popup_93421c3caf5bd79b02662c3c27f1ca7f.setContent(html_5f11bedaea6e168aaa31c12fdd48dfd5);
+            
+        
+
+        circle_marker_01e511e66ce6d5d208e09208dba00124.bindPopup(popup_93421c3caf5bd79b02662c3c27f1ca7f)
+        ;
+
+        
+    
+    
+            var circle_marker_24ee90a11d04c9554d7a54fad169209e = L.circleMarker(
+                [40.3496953, -74.6597376],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_172d9951d9da8b454216882db70d3c9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_65e750257b56ed3c35abc77e1eb0de73 = $(`<div id="html_65e750257b56ed3c35abc77e1eb0de73" style="width: 100.0%; height: 100.0%;">Princeton: 2 papers</div>`)[0];
+                popup_172d9951d9da8b454216882db70d3c9a.setContent(html_65e750257b56ed3c35abc77e1eb0de73);
+            
+        
+
+        circle_marker_24ee90a11d04c9554d7a54fad169209e.bindPopup(popup_172d9951d9da8b454216882db70d3c9a)
+        ;
+
+        
+    
+    
+            var circle_marker_af2b7ec658c709d16c5a2db1b53a674b = L.circleMarker(
+                [48.8534951, 2.3483915],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_d3c5f50b232ab34618c59225327ce91f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bbc13d35fe4fed8ed1db4fda1f24ad4f = $(`<div id="html_bbc13d35fe4fed8ed1db4fda1f24ad4f" style="width: 100.0%; height: 100.0%;">Paris: 1 papers</div>`)[0];
+                popup_d3c5f50b232ab34618c59225327ce91f.setContent(html_bbc13d35fe4fed8ed1db4fda1f24ad4f);
+            
+        
+
+        circle_marker_af2b7ec658c709d16c5a2db1b53a674b.bindPopup(popup_d3c5f50b232ab34618c59225327ce91f)
+        ;
+
+        
+    
+    
+            var circle_marker_a32cea0cccbdaa15a739b93eb5b69b0b = L.circleMarker(
+                [1.357107, 103.8194992],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_e8345476963ae55053b34b036b35ef36 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e72eb3f1694c731aef2fade0adb7e9b0 = $(`<div id="html_e72eb3f1694c731aef2fade0adb7e9b0" style="width: 100.0%; height: 100.0%;">Singapore: 1 papers</div>`)[0];
+                popup_e8345476963ae55053b34b036b35ef36.setContent(html_e72eb3f1694c731aef2fade0adb7e9b0);
+            
+        
+
+        circle_marker_a32cea0cccbdaa15a739b93eb5b69b0b.bindPopup(popup_e8345476963ae55053b34b036b35ef36)
+        ;
+
+        
+    
+    
+            var circle_marker_d7a7d67d53a9d740b1dd8ec0da2cfd65 = L.circleMarker(
+                [40.7127281, -74.0060152],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_73fa56ceadea3f7dcc68c683aac36a6e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ad391971913e0fc9e23d3e55a9d6521 = $(`<div id="html_8ad391971913e0fc9e23d3e55a9d6521" style="width: 100.0%; height: 100.0%;">New York: 1 papers</div>`)[0];
+                popup_73fa56ceadea3f7dcc68c683aac36a6e.setContent(html_8ad391971913e0fc9e23d3e55a9d6521);
+            
+        
+
+        circle_marker_d7a7d67d53a9d740b1dd8ec0da2cfd65.bindPopup(popup_73fa56ceadea3f7dcc68c683aac36a6e)
+        ;
+
+        
+    
+    
+            var circle_marker_75f4a215a15c9f0f6ff1301dfebb0217 = L.circleMarker(
+                [51.4893335, -0.1440551],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_fdda2a16b60f4522635ec06db1dea3bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9cd77c042f9f0dce35fca3294f2afa3 = $(`<div id="html_b9cd77c042f9f0dce35fca3294f2afa3" style="width: 100.0%; height: 100.0%;">London: 1 papers</div>`)[0];
+                popup_fdda2a16b60f4522635ec06db1dea3bf.setContent(html_b9cd77c042f9f0dce35fca3294f2afa3);
+            
+        
+
+        circle_marker_75f4a215a15c9f0f6ff1301dfebb0217.bindPopup(popup_fdda2a16b60f4522635ec06db1dea3bf)
+        ;
+
+        
+    
+    
+            var circle_marker_bca670b374921479028eac86afd7b704 = L.circleMarker(
+                [31.2284923, 121.4021139],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_97b503f1eb0a8793d692326f11d9e38c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5915e4b6fb018498ef67d670d6cdd19a = $(`<div id="html_5915e4b6fb018498ef67d670d6cdd19a" style="width: 100.0%; height: 100.0%;">East China Normal University: 1 papers</div>`)[0];
+                popup_97b503f1eb0a8793d692326f11d9e38c.setContent(html_5915e4b6fb018498ef67d670d6cdd19a);
+            
+        
+
+        circle_marker_bca670b374921479028eac86afd7b704.bindPopup(popup_97b503f1eb0a8793d692326f11d9e38c)
+        ;
+
+        
+    
+    
+            var circle_marker_4b03e87fd06008db8687dced45442a56 = L.circleMarker(
+                [42.3657432, -71.1222139],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_29ba5f035011b39bf945cd563cbe105c);
+        
+    
+        var popup_e34bf88a769909ec655c920035544993 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98feefdd6bfc57ed79503d18c72b851c = $(`<div id="html_98feefdd6bfc57ed79503d18c72b851c" style="width: 100.0%; height: 100.0%;">Harvard: 1 papers</div>`)[0];
+                popup_e34bf88a769909ec655c920035544993.setContent(html_98feefdd6bfc57ed79503d18c72b851c);
+            
+        
+
+        circle_marker_4b03e87fd06008db8687dced45442a56.bindPopup(popup_e34bf88a769909ec655c920035544993)
+        ;
+
+        
+    
+</script>
+</html>

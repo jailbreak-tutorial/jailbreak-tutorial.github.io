@@ -1,0 +1,120 @@
+{
+  "papers": [
+    {
+      "title": "Universal Adversarial Triggers for Attacking and Analyzing NLP",
+      "authors": "Wallace et al.",
+      "venue": "EMNLP",
+      "year": 2019,
+      "abstract": "One of the first papers to demonstrate how universal adversarial triggers could be used to manipulate language models, laying groundwork for jailbreaking research.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/1908.07125",
+        "code": "https://github.com/Eric-Wallace/universal-triggers"
+      }
+    },
+    {
+      "title": "Language Models are Few-Shot Learners",
+      "authors": "Brown et al.",
+      "venue": "NeurIPS",
+      "year": 2020,
+      "abstract": "Introduced GPT-3 and demonstrated its capabilities, leading to increased interest in prompt engineering and jailbreaking research.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2005.14165"
+      }
+    },
+    {
+      "title": "Red Teaming Language Models with Language Models",
+      "authors": "Perez et al.",
+      "venue": "ICLR",
+      "year": 2022,
+      "abstract": "Introduced the concept of using language models to automatically discover adversarial prompts, significantly advancing jailbreaking techniques.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2202.03286",
+        "code": "https://github.com/anthropics/red-teaming"
+      }
+    },
+    {
+      "title": "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+      "authors": "Greshake et al.",
+      "venue": "arXiv",
+      "year": 2023,
+      "abstract": "Demonstrated how indirect prompt injection attacks could compromise LLM-integrated applications, expanding the scope of jailbreaking research.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2302.12173"
+      }
+    },
+    {
+      "title": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
+      "authors": "Zou et al.",
+      "venue": "arXiv",
+      "year": 2023,
+      "abstract": "Introduced the concept of universal adversarial suffixes that could jailbreak multiple aligned language models simultaneously.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2307.15043",
+        "code": "https://github.com/andyzoujm/universal-llm-attack"
+      }
+    },
+    {
+      "title": "SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks",
+      "authors": "Robey et al.",
+      "venue": "TMLR",
+      "year": 2023,
+      "abstract": "Proposed a novel defense mechanism that uses randomized smoothing to make language models robust against jailbreaking attacks.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2310.03684",
+        "code": "https://github.com/arobey1/smooth-llm"
+      }
+    },
+    {
+      "title": "Defending Against Alignment-Breaking Attacks via Robustly Aligned LLM",
+      "authors": "Jain et al.",
+      "venue": "arXiv",
+      "year": 2023,
+      "abstract": "Proposed defense mechanisms against jailbreaking attacks, marking a shift towards more robust safety measures.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2309.14348"
+      }
+    },
+    {
+      "title": "Jailbreaking Black Box Large Language Models in Twenty Queries",
+      "authors": "Chao et al.",
+      "venue": "SaTML",
+      "year": 2023,
+      "abstract": "Demonstrated efficient black-box jailbreaking methods that could bypass safety measures with minimal queries.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2310.08419",
+        "code": "https://github.com/patrickrchao/JailbreakingLLMs"
+      }
+    },
+    {
+      "title": "JailbreakBench: An Open Benchmark for Jailbreaking Large Language Models",
+      "authors": "Chao et al.",
+      "venue": "NeurIPS",
+      "year": 2024,
+      "abstract": "A comprehensive benchmark for evaluating jailbreaking attacks and defenses across multiple LLMs.",
+      "categories": ["benchmark"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2402.16427",
+        "code": "https://github.com/JailbreakBench/jailbreakbench"
+      }
+    },
+    {
+      "title": "Jailbreaking as a Reward Misspecification Problem",
+      "authors": "Rafailov et al.",
+      "venue": "arXiv",
+      "year": 2024,
+      "abstract": "Framed jailbreaking as a reward misspecification problem, providing new insights into the fundamental causes of alignment failures.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2402.16427"
+      }
+    }
+  ]
+} 

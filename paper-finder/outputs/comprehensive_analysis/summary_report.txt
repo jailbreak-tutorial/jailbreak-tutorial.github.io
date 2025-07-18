@@ -1,0 +1,24 @@
+Jailbreaking LLM Papers Analysis Report
+==================================================
+
+Total Papers Found: 2121
+Date Range: 2020-09-17 10:50:42+00:00 to 2025-07-03 17:59:02+00:00
+
+Category Distribution:
+  jailbreaking: 1068 papers
+  safety_alignment: 813 papers
+  prompt_engineering: 121 papers
+  adversarial_attacks: 76 papers
+  red_teaming: 43 papers
+
+Top Authors:
+  Yang Liu: 22 papers
+  Bo Li: 17 papers
+  Dacheng Tao: 15 papers
+  Xingjun Ma: 15 papers
+  Yinpeng Dong: 14 papers
+  Pin-Yu Chen: 13 papers
+  Chaowei Xiao: 13 papers
+  Xiaojun Jia: 13 papers
+  Siyuan Liang: 12 papers
+  Bryan Hooi: 12 papers

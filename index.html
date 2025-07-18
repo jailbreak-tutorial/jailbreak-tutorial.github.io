@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- <nav class="navbar is-transparent">
+    <nav class="navbar is-transparent">
         <div class="container">
             <div class="navbar-end">
                 <div class="navbar-item">
@@ -17,12 +17,17 @@
                 <div class="navbar-item">
                     <a href="/reading-list.html" class="nav-link">Reading List</a>
                 </div>
+                <div class="navbar-item">
+                    <a href="/paper-tracker.html" class="nav-link">Paper Tracker</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="files/jailbreaking-tutorial.pdf" class="nav-link" target="_blank">Tutorial PDF</a>
+                </div>
             </div>
         </div>
-    </nav> -->
+    </nav>
     <section class="hero">
-        <div class="hero-body">
-            <div class="container">
+        <div class="container">
                 <h1 class="main-title has-text-centered">
                     Jailbreaking LLMs and Agentic Systems
                 </h1>
@@ -32,25 +37,22 @@
                 <h3 class="conference-title has-text-centered">
                     ICML 2025 Tutorial
                 </h3>
-                <div class="author-list">
-                    <p class="has-text-centered">
-                        <span class="author">Hamed Hassani</span><sup>1</sup>,
-                        <span class="author">Amin Karbasi</span><sup>2,3</sup>,
-                        <span class="author">Alexander Robey</span><sup>4,5</sup>,
-                        <span class="author">Yaron Singer</span><sup>3</sup>
-                    </p>
-                    <div class="affiliation">
-                        <p><sup>1</sup> University of Pennsylvania</p>
-                        <p><sup>2</sup> Yale University</p>
-                        <p><sup>3</sup> Robust Intelligence</p>
-                        <p><sup>4</sup> Carnegie Mellon University</p>
-                        <p><sup>5</sup> Gray Swan AI</p>
+                <div class="author-headshots">
+                    <div class="headshot-container">
+                        <img src="files/headshots/hamed-hassani.png" alt="Hamed Hassani" class="headshot">
+                        <p class="headshot-name">Hamed Hassani</p>
+                        <p class="headshot-affiliation">Penn & Google</p>
                     </div>
-                </div>
-                <div class="pdf-link has-text-centered" style="margin: 2rem 0;">
-                    <a href="files/jailbreaking-tutorial.pdf" class="pdf-button" target="_blank">
-                        📄 Download Tutorial PDF
-                    </a>
+                    <div class="headshot-container">
+                        <img src="files/headshots/amin-karbasi.png" alt="Amin Karbasi" class="headshot">
+                        <p class="headshot-name">Amin Karbasi</p>
+                        <p class="headshot-affiliation">Yale & Robust Intelligence</p>
+                    </div>
+                    <div class="headshot-container">
+                        <img src="files/headshots/alex-robey.png" alt="Alexander Robey" class="headshot">
+                        <p class="headshot-name">Alexander Robey</p>
+                        <p class="headshot-affiliation">CMU & Gray Swan AI</p>
+                    </div>
                 </div>
                 <div class="abstract">
                     <h3>Abstract</h3>
@@ -58,7 +60,6 @@
 
                     <p>Over the past two years, research in both academia and industry has sought to design new attacks that stress test model safeguards, and to develop stronger defenses against these attacks. And, in general, this concerted work has resulted in safer models. Notably, highly performant LLMs such as OpenAI's o-series and Anthropic's Claude3 models demonstrate significant robustness against a variety of jailbreaking attacks. However, the evolving arms race between jailbreaking attacks and defenses demonstrates that meeting acceptable standards of safety remains a work in progress. To provide a comprehensive overview of the evolving landscape in this field, this tutorial aims to present a unified perspective on recent progress in the jailbreaking community. In line with this goal, the primary objectives of this tutorial are as follows: (i) We will review <em><strong>cutting-edge advances</strong></em> in jailbreaking, covering new algorithmic frameworks and mathematical foundations, with particular emphasis on attack, defenses, evaluations, and applications in robotics and agentic systems; (ii) Noting that the foundations of jailbreaking are still at their infancy, we will discuss the plethora of <em><strong>new directions, opportunities, and challenges</strong></em> that have recently been brought to bear by the identification of jailbreaking attacks; (iii) We will walk through a range of <em><strong>open-source Python implementations</strong></em> of state-of-the-art algorithms.</p>
                 </div>
-            </div>
         </div>
     </section>
 

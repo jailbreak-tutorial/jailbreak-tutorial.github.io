@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Jailbreaking Reading List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar is-transparent">
+        <div class="container">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="reading-list.html" class="nav-link">Reading List</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="paper-tracker.html" class="nav-link">Paper Tracker</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="files/jailbreaking-tutorial.pdf" class="nav-link" target="_blank">Tutorial PDF</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="main-title has-text-centered">Influential Papers in LLM Jailbreaking</h1>
+            <p class="conference-title has-text-centered">A chronological timeline of key research</p>
+        </div>
+    </section>
+
+    <div class="timeline-container">
+        <div class="container">
+            <div class="filter-buttons has-text-centered">
+                <button class="filter-button is-active" data-category="all">All Papers</button>
+                <button class="filter-button" data-category="attack">Attacks</button>
+                <button class="filter-button" data-category="defense">Defenses</button>
+                <button class="filter-button" data-category="benchmark">Benchmarks</button>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline" id="timeline">
+                    <!-- Papers will be loaded here dynamically -->
+                </div>
+                <div class="timeline-years" id="timeline-years">
+                    <!-- Year indicators will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>Jailbreaking LLMs and Agentic Systems - ICML 2025 Tutorial</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to create a paper element
+        function createPaperElement(paper) {
+            const div = document.createElement('div');
+            div.className = 'timeline-item';
+            div.dataset.categories = paper.categories.join(' ');
+            div.dataset.year = paper.year;
+            div.style.display = 'block';
+
+            const tags = paper.categories.map(category => 
+                `<span class="tag is-${category}">${category.charAt(0).toUpperCase() + category.slice(1)}</span>`
+            ).join('');
+
+            const links = Object.entries(paper.links).map(([type, url]) => 
+                `<a href="${url}" class="paper-link" target="_blank">${type === 'paper' ? 'Paper' : 'Code'} →</a>`
+            ).join('');
+
+            div.innerHTML = `
+                <div class="paper-title">${paper.title}</div>
+                <div class="paper-meta">
+                    <span class="paper-authors">${paper.authors} (${paper.year})</span>
+                    <span class="paper-venue">${paper.venue}</span>
+                </div>
+                <div class="paper-abstract">${paper.abstract}</div>
+                <div class="paper-tags">
+                    ${tags}
+                </div>
+                <div class="paper-links">
+                    ${links}
+                </div>
+            `;
+
+            return div;
+        }
+
+        // Function to update year indicators
+        function updateYearIndicators() {
+            const visibleItems = document.querySelectorAll('.timeline-item[style="display: block;"]');
+            const years = new Set();
+            visibleItems.forEach(item => years.add(item.dataset.year));
+            
+            const yearsContainer = document.getElementById('timeline-years');
+            yearsContainer.innerHTML = '';
+            
+            Array.from(years).sort().forEach(year => {
+                const yearDiv = document.createElement('div');
+                yearDiv.className = 'timeline-year';
+                yearDiv.textContent = year;
+                yearsContainer.appendChild(yearDiv);
+            });
+        }
+
+        // Function to load and display papers
+        async function loadPapers() {
+            try {
+                const response = await fetch('papers.json');
+                const data = await response.json();
+                
+                // Sort papers by year
+                const sortedPapers = data.papers.sort((a, b) => a.year - b.year);
+                
+                const timeline = document.getElementById('timeline');
+                sortedPapers.forEach(paper => {
+                    timeline.appendChild(createPaperElement(paper));
+                });
+
+                // Update year indicators immediately after loading papers
+                updateYearIndicators();
+            } catch (error) {
+                console.error('Error loading papers:', error);
+            }
+        }
+
+        // Initialize filter buttons
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('is-active'));
+                    button.classList.add('is-active');
+
+                    const category = button.dataset.category;
+
+                    // Filter timeline items
+                    timelineItems.forEach(item => {
+                        if (category === 'all' || item.dataset.categories.includes(category)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Update year indicators after filtering
+                    updateYearIndicators();
+                });
+            });
+        }
+
+        // Load papers when the page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadPapers();
+            initializeFilters();
+        });
+    </script>
+</body>
+</html> 

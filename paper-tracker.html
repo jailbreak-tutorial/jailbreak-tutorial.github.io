@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Tracker - Jailbreaking LLMs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar is-transparent">
+        <div class="container">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="reading-list.html" class="nav-link">Reading List</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="paper-tracker.html" class="nav-link">Paper Tracker</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="files/jailbreaking-tutorial.pdf" class="nav-link" target="_blank">Tutorial PDF</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="main-title has-text-centered">Paper Tracker</h1>
+            <p class="conference-title has-text-centered">Interactive visualization of jailbreaking research trends</p>
+        </div>
+    </section>
+
+    <div class="container" style="margin-top: 2rem;">
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+                <div class="box">
+                    <h3 class="title is-4 has-text-centered" style="color: var(--primary-orange);">Cumulative Publication Trends</h3>
+                    <p class="has-text-centered" style="margin-bottom: 2rem;">
+                        Hover over the plot to see detailed information about publication dates and paper counts.
+                    </p>
+                    <div style="position: relative; height: 400px;">
+                        <canvas id="cumulativeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+                <div class="box">
+                    <h3 class="title is-4 has-text-centered" style="color: var(--primary-orange);">Statistics</h3>
+                    <div class="columns has-text-centered">
+                        <div class="column">
+                            <div class="notification is-light">
+                                <p class="heading">Total Papers</p>
+                                <p class="title" id="totalPapers">-</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="notification is-light">
+                                <p class="heading">Date Range</p>
+                                <p class="title" id="dateRange">-</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="notification is-light">
+                                <p class="heading">Latest Paper</p>
+                                <p class="title" id="latestPaper">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Jailbreaking LLMs and Agentic Systems</strong> - ICML 2025 Tutorial
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data - in a real implementation, this would be loaded from the JSON file
+        const sampleData = {
+            papers: [
+                { date: '2020-09-17', count: 1, title: 'First jailbreaking paper' },
+                { date: '2021-03-15', count: 15, title: 'Early developments' },
+                { date: '2022-01-10', count: 45, title: 'Growing interest' },
+                { date: '2022-06-20', count: 89, title: 'Rapid expansion' },
+                { date: '2023-01-05', count: 156, title: 'Mainstream attention' },
+                { date: '2023-06-12', count: 234, title: 'Industry focus' },
+                { date: '2024-01-08', count: 412, title: 'Academic surge' },
+                { date: '2024-06-15', count: 678, title: 'Research explosion' },
+                { date: '2025-01-03', count: 892, title: 'Current state' },
+                { date: '2025-07-03', count: 2121, title: 'Latest papers' }
+            ]
+        };
+
+        // Process data for cumulative chart
+        const processedData = sampleData.papers.map(paper => ({
+            x: new Date(paper.date),
+            y: paper.count,
+            title: paper.title
+        }));
+
+        // Create the chart
+        const ctx = document.getElementById('cumulativeChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Cumulative Papers',
+                    data: processedData,
+                    borderColor: '#FF6B35',
+                    backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#FF6B35',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: '#FF6B35',
+                    pointHoverBorderColor: '#fff',
+                    pointHoverBorderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        borderColor: '#FF6B35',
+                        borderWidth: 1,
+                        cornerRadius: 8,
+                        displayColors: false,
+                        callbacks: {
+                            title: function(context) {
+                                const dataPoint = context[0];
+                                const date = new Date(dataPoint.parsed.x);
+                                return date.toLocaleDateString('en-US', { 
+                                    year: 'numeric', 
+                                    month: 'long', 
+                                    day: 'numeric' 
+                                });
+                            },
+                            label: function(context) {
+                                const dataPoint = context[0];
+                                const paper = processedData[dataPoint.dataIndex];
+                                return [
+                                    `Papers: ${dataPoint.parsed.y}`,
+                                    `Note: ${paper.title}`
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'month',
+                            displayFormats: {
+                                month: 'MMM yyyy'
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Publication Date',
+                            color: '#333',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Cumulative Number of Papers',
+                            color: '#333',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        ticks: {
+                            stepSize: 500
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                },
+                elements: {
+                    point: {
+                        hoverRadius: 8
+                    }
+                }
+            }
+        });
+
+        // Update statistics
+        document.getElementById('totalPapers').textContent = '2,121';
+        document.getElementById('dateRange').textContent = '2020-2025';
+        document.getElementById('latestPaper').textContent = 'Jul 2025';
+
+        // Add hover effect for better interactivity
+        chart.canvas.addEventListener('mousemove', function(e) {
+            const rect = chart.canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const elements = chart.getElementsAtEventForMode(e, 'index', { intersect: false });
+            
+            if (elements.length > 0) {
+                chart.canvas.style.cursor = 'pointer';
+            } else {
+                chart.canvas.style.cursor = 'default';
+            }
+        });
+    </script>
+</body>
+</html> 
