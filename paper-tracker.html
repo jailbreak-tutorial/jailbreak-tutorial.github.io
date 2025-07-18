@@ -87,6 +87,26 @@
                 </div>
             </div>
         </div>
+        
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+                <div class="box">
+                    <h3 class="title is-4 has-text-centered" style="color: var(--primary-orange);">Recent Papers</h3>
+                    <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+                        Latest publications in jailbreaking research. Scroll down to see more papers.
+                    </p>
+                    <div class="recent-papers-container">
+                        <div class="recent-papers-list" id="recentPapersList">
+                            <!-- Papers will be populated here -->
+                        </div>
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="scroll-arrow">↓</div>
+                        <span class="scroll-text">Scroll for more papers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="footer">
@@ -190,6 +210,9 @@
                 }
             ]
         };
+
+        // Recent papers will be loaded dynamically from most-recent-papers.json
+        let recentPapers = [];
 
         // Process data for cumulative chart
         const processedData = sampleData.papers.map(paper => ({
@@ -369,6 +392,81 @@
         document.getElementById('dateRange').textContent = '2020-2025';
         document.getElementById('latestPaper').textContent = 'Jul 2025';
 
+        // Load recent papers from JSON file
+        async function loadRecentPapers() {
+            try {
+                const response = await fetch('most-recent-papers.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                recentPapers = await response.json();
+                populateRecentPapers();
+                return Promise.resolve();
+            } catch (error) {
+                console.error('Error loading recent papers:', error);
+                // Show error message to user
+                const container = document.getElementById('recentPapersList');
+                container.innerHTML = `
+                    <div class="notification is-warning">
+                        <p>Unable to load recent papers. Please try refreshing the page.</p>
+                        <p class="is-size-7">Error: ${error.message}</p>
+                    </div>
+                `;
+                return Promise.reject(error);
+            }
+        }
+
+        // Populate recent papers
+        function populateRecentPapers() {
+            const container = document.getElementById('recentPapersList');
+            container.innerHTML = ''; // Clear existing content
+            
+            recentPapers.forEach(paper => {
+                const paperDiv = document.createElement('div');
+                paperDiv.className = 'recent-paper-item';
+                
+                const date = new Date(paper.date);
+                const formattedDate = date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric' 
+                });
+                
+                paperDiv.innerHTML = `
+                    <div class="recent-paper-title">${paper.title}</div>
+                    <div class="recent-paper-meta">
+                        <span class="recent-paper-authors">${paper.authors}</span>
+                        <span class="recent-paper-date">${formattedDate}</span>
+                    </div>
+                    <p class="recent-paper-abstract">${paper.abstract}</p>
+                `;
+                
+                container.appendChild(paperDiv);
+            });
+        }
+
+        // Handle scroll indicator
+        function handleScrollIndicator() {
+            const list = document.getElementById('recentPapersList');
+            const indicator = document.querySelector('.scroll-indicator');
+            
+            // Check if scrolling is needed
+            function checkScrollNeeded() {
+                const hasScrollbar = list.scrollHeight > list.clientHeight;
+                if (hasScrollbar) {
+                    indicator.style.display = 'block';
+                } else {
+                    indicator.style.display = 'none';
+                }
+            }
+            
+            // Check after papers are loaded
+            setTimeout(checkScrollNeeded, 100);
+            
+            // Check on window resize
+            window.addEventListener('resize', checkScrollNeeded);
+        }
+
         // Functions to handle paper details panel
         function showPaperDetails(dataPoint) {
             const panel = document.getElementById('paperDetailsPanel');
@@ -429,6 +527,11 @@
             if (!panel.contains(e.target) && !chartCanvas.contains(e.target)) {
                 hidePaperDetails();
             }
+        });
+
+        // Initialize recent papers functionality
+        loadRecentPapers().then(() => {
+            handleScrollIndicator();
         });
     </script>
 </body>

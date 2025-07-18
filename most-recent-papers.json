@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Answer Matching Outperforms Multiple Choice for Language Model Evaluation",
+    "authors": "Nikhil Chandak, Shashwat Goel, Ameya Prabhu, Moritz Hardt, Jonas Geiping",
+    "date": "2025-07-03",
+    "abstract": "Multiple choice benchmarks have long been the workhorse of language model\nevaluation because grading multiple choice is objective and easy to automate.\nHowever, we show multiple choice questions from ..."
+  },
+  {
+    "title": "LLM Hypnosis: Exploiting User Feedback for Unauthorized Knowledge Injection to All Users",
+    "authors": "Almog Hilel, Idan Shenfeld, Leshem Choshen, Jacob Andreas",
+    "date": "2025-07-03",
+    "abstract": "We describe a vulnerability in language models (LMs) trained with user\nfeedback, whereby a single user can persistently alter LM knowledge and\nbehavior given only the ability to provide prompts and up..."
+  },
+  {
+    "title": "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection",
+    "authors": "Ziqi Miao, Yi Ding, Lijun Li, Jing Shao",
+    "date": "2025-07-03",
+    "abstract": "With the emergence of strong visual-language capabilities, multimodal large\nlanguage models (MLLMs) have demonstrated tremendous potential for real-world\napplications. However, the security vulnerabil..."
+  },
+  {
+    "title": "LLM-Driven Treatment Effect Estimation Under Inference Time Text Confounding",
+    "authors": "Yuchen Ma, Dennis Frauen, Jonas Schweisthal, Stefan Feuerriegel",
+    "date": "2025-07-03",
+    "abstract": "Estimating treatment effects is crucial for personalized decision-making in\nmedicine, but this task faces unique challenges in clinical practice. At\ntraining time, models for estimating treatment effe..."
+  },
+  {
+    "title": "Is Reasoning All You Need? Probing Bias in the Age of Reasoning Language Models",
+    "authors": "Riccardo Cantini, Nicola Gabriele, Alessio Orsino, Domenico Talia",
+    "date": "2025-07-03",
+    "abstract": "Reasoning Language Models (RLMs) have gained traction for their ability to\nperform complex, multi-step reasoning tasks through mechanisms such as\nChain-of-Thought (CoT) prompting or fine-tuned reasoni..."
+  },
+  {
+    "title": "Moral Responsibility or Obedience: What Do We Want from AI?",
+    "authors": "Joseph Boland",
+    "date": "2025-07-03",
+    "abstract": "As artificial intelligence systems become increasingly agentic, capable of\ngeneral reasoning, planning, and value prioritization, current safety practices\nthat treat obedience as a proxy for ethical b..."
+  },
+  {
+    "title": "DeSTA2.5-Audio: Toward General-Purpose Large Audio Language Model with Self-Generated Cross-Modal Alignment",
+    "authors": "Ke-Han Lu, Zhehuai Chen, Szu-Wei Fu, Chao-Han Huck Yang, Sung-Feng Huang, Chih-Kai Yang, Chee-En Yu, Chun-Wei Chen, Wei-Chih Chen, Chien-yu Huang, Yi-Cheng Lin, Yu-Xiang Lin, Chi-An Fu, Chun-Yi Kuan, Wenze Ren, Xuanjun Chen, Wei-Ping Huang, En-Pei Hu, Tzu-Quan Lin, Yuan-Kuei Wu, Kuan-Po Huang, Hsiao-Ying Huang, Huang-Cheng Chou, Kai-Wei Chang, Cheng-Han Chiang, Boris Ginsburg, Yu-Chiang Frank Wang, Hung-yi Lee",
+    "date": "2025-07-03",
+    "abstract": "We introduce DeSTA2.5-Audio, a general-purpose Large Audio Language Model\n(LALM) designed for robust auditory perception and instruction-following,\nwithout requiring task-specific audio instruction-tu..."
+  },
+  {
+    "title": "Meta SecAlign: A Secure Foundation LLM Against Prompt Injection Attacks",
+    "authors": "Sizhe Chen, Arman Zharmagambetov, David Wagner, Chuan Guo",
+    "date": "2025-07-03",
+    "abstract": "Prompt injection attacks pose a significant security threat to LLM-integrated\napplications. Model-level defenses have shown strong effectiveness, but are\ncurrently deployed into commercial-grade model..."
+  },
+  {
+    "title": "MPF: Aligning and Debiasing Language Models post Deployment via Multi Perspective Fusion",
+    "authors": "Xin Guan, PeiHsin Lin, Zekun Wu, Ze Wang, Ruibo Zhang, Emre Kazim, Adriano Koshiyama",
+    "date": "2025-07-03",
+    "abstract": "Multiperspective Fusion (MPF) is a novel posttraining alignment framework for\nlarge language models (LLMs) developed in response to the growing need for easy\nbias mitigation. Built on top of the SAGED..."
+  },
+  {
+    "title": "IndianBailJudgments-1200: A Multi-Attribute Dataset for Legal NLP on Indian Bail Orders",
+    "authors": "Sneha Deshmukh, Prathmesh Kamble",
+    "date": "2025-07-03",
+    "abstract": "Legal NLP remains underdeveloped in regions like India due to the scarcity of\nstructured datasets. We introduce IndianBailJudgments-1200, a new benchmark\ndataset comprising 1200 Indian court judgments..."
+  },
+  {
+    "title": "Introducing a New Brexit-Related Uncertainty Index: Its Evolution and Economic Consequences",
+    "authors": "Ismet Gocer, Julia Darby, Serdar Ongan",
+    "date": "2025-07-03",
+    "abstract": "Important game-changer economic events and transformations cause\nuncertainties that may affect investment decisions, capital flows,\ninternational trade, and macroeconomic variables. One such major tra..."
+  },
+  {
+    "title": "Toward a Robust and Generalizable Metamaterial Foundation Model",
+    "authors": "Namjung Kim, Dongseok Lee, Jongbin Yu, Sung Woong Cho, Dosung Lee, Yesol Park, Youngjoon Hong",
+    "date": "2025-07-03",
+    "abstract": "Advances in material functionalities drive innovations across various fields,\nwhere metamaterials-defined by structure rather than composition-are leading\nthe way. Despite the rise of artificial intel..."
+  },
+  {
+    "title": "UVLM: Benchmarking Video Language Model for Underwater World Understanding",
+    "authors": "Xizhe Xue, Yang Zhou, Dawei Yan, Ying Li, Haokui Zhang, Rong Xiao",
+    "date": "2025-07-03",
+    "abstract": "Recently, the remarkable success of large language models (LLMs) has achieved\na profound impact on the field of artificial intelligence. Numerous advanced\nworks based on LLMs have been proposed and ap..."
+  },
+  {
+    "title": "PII Jailbreaking in LLMs via Activation Steering Reveals Personal Information Leakage",
+    "authors": "Krishna Kanth Nakka, Xue Jiang, Xuebing Zhou",
+    "date": "2025-07-03",
+    "abstract": "This paper investigates privacy jailbreaking in LLMs via steering, focusing\non whether manipulating activations can bypass LLM alignment and alter response\nbehaviors to privacy related queries (e.g., ..."
+  },
+  {
+    "title": "DoMIX: An Efficient Framework for Exploiting Domain Knowledge in Fine-Tuning",
+    "authors": "Dohoon Kim, Donghun Kang, Taesup Moon",
+    "date": "2025-07-03",
+    "abstract": "Domain-Adaptive Pre-training (DAP) has recently gained attention for its\neffectiveness in fine-tuning pre-trained models. Building on this, continual\nDAP has been explored to develop pre-trained model..."
+  },
+  {
+    "title": "Structural Code Search using Natural Language Queries",
+    "authors": "Ben Limpanukorn, Yanjun Wang, Zach Patterson, Pranav Garg, Murali Krishna Ramanathan, Xiaofei Ma, Anoop Deoras, Miryung Kim",
+    "date": "2025-07-02",
+    "abstract": "Searching code is a common task that developers perform to understand APIs,\nlearn common code patterns, and navigate code. Currently, developers most\ncommonly search using keywords and regular express..."
+  },
+  {
+    "title": "The Future is Agentic: Definitions, Perspectives, and Open Challenges of Multi-Agent Recommender Systems",
+    "authors": "Reza Yousefi Maragheh, Yashar Deldjoo",
+    "date": "2025-07-02",
+    "abstract": "Large language models (LLMs) are rapidly evolving from passive engines of\ntext generation into agentic entities that can plan, remember, invoke external\ntools, and co-operate with one another. This pe..."
+  },
+  {
+    "title": "Reasoning on a Budget: A Survey of Adaptive and Controllable Test-Time Compute in LLMs",
+    "authors": "Mohammad Ali Alomrani, Yingxue Zhang, Derek Li, Qianyi Sun, Soumyasundar Pal, Zhanguang Zhang, Yaochen Hu, Rohan Deepak Ajwani, Antonios Valkanas, Raika Karimi, Peng Cheng, Yunzhou Wang, Pengyi Liao, Hanrui Huang, Bin Wang, Jianye Hao, Mark Coates",
+    "date": "2025-07-02",
+    "abstract": "Large language models (LLMs) have rapidly progressed into general-purpose\nagents capable of solving a broad spectrum of tasks. However, current models\nremain inefficient at reasoning: they apply fixed..."
+  },
+  {
+    "title": "MGC: A Compiler Framework Exploiting Compositional Blindness in Aligned LLMs for Malware Generation",
+    "authors": "Lu Yan, Zhuo Zhang, Xiangzhe Xu, Shengwei An, Guangyu Shen, Zhou Xuan, Xuan Chen, Xiangyu Zhang",
+    "date": "2025-07-02",
+    "abstract": "Large language models (LLMs) have democratized software development, reducing\nthe expertise barrier for programming complex applications. This accessibility\nextends to malicious software development, ..."
+  },
+  {
+    "title": "Kwai Keye-VL Technical Report",
+    "authors": "Kwai Keye Team, Biao Yang, Bin Wen, Changyi Liu, Chenglong Chu, Chengru Song, Chongling Rao, Chuan Yi, Da Li, Dunju Zang, Fan Yang, Guorui Zhou, Hao Peng, Haojie Ding, Jiaming Huang, Jiangxia Cao, Jiankang Chen, Jingyun Hua, Jin Ouyang, Kaibing Chen, Kaiyu Jiang, Kaiyu Tang, Kun Gai, Shengnan Zhang, Siyang Mao, Sui Huang, Tianke Zhang, Tingting Gao, Wei Chen, Wei Yuan, Xiangyu Wu, Xiao Hu, Xingyu Lu, Yang Zhou, Yi-Fan Zhang, Yiping Yang, Yulong Chen, Zhenhua Wu, Zhenyu Li, Zhixin Ling, Ziming Li, Dehua Ma, Di Xu, Haixuan Gao, Hang Li, Jiawei Guo, Jing Wang, Lejian Ren, Muhao Wei, Qianqian Wang, Qigen Hu, Shiyao Wang, Tao Yu, Xinchen Luo, Yan Li, Yiming Liang, Yuhang Hu, Zeyi Lu, Zhuoran Yang, Zixing Zhang",
+    "date": "2025-07-02",
+    "abstract": "While Multimodal Large Language Models (MLLMs) demonstrate remarkable\ncapabilities on static images, they often fall short in comprehending dynamic,\ninformation-dense short-form videos, a dominant med..."
+  }
+]
