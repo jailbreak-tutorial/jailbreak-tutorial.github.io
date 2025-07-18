@@ -46,6 +46,15 @@
                     </p>
                     <div style="position: relative; height: 400px;">
                         <canvas id="cumulativeChart"></canvas>
+                        <div id="paperDetailsPanel" class="paper-details-panel" style="display: none;">
+                            <div class="panel-header">
+                                <h4 class="panel-title">Influential Papers</h4>
+                                <button class="panel-close" onclick="hidePaperDetails()">×</button>
+                            </div>
+                            <div class="panel-content" id="panelContent">
+                                <!-- Paper details will be populated here -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,19 +98,96 @@
     </footer>
 
     <script>
-        // Sample data - in a real implementation, this would be loaded from the JSON file
+        // Sample data with influential papers for each period
         const sampleData = {
             papers: [
-                { date: '2020-09-17', count: 1, title: 'First jailbreaking paper' },
-                { date: '2021-03-15', count: 15, title: 'Early developments' },
-                { date: '2022-01-10', count: 45, title: 'Growing interest' },
-                { date: '2022-06-20', count: 89, title: 'Rapid expansion' },
-                { date: '2023-01-05', count: 156, title: 'Mainstream attention' },
-                { date: '2023-06-12', count: 234, title: 'Industry focus' },
-                { date: '2024-01-08', count: 412, title: 'Academic surge' },
-                { date: '2024-06-15', count: 678, title: 'Research explosion' },
-                { date: '2025-01-03', count: 892, title: 'Current state' },
-                { date: '2025-07-03', count: 2121, title: 'Latest papers' }
+                { 
+                    date: '2020-09-17', 
+                    count: 1, 
+                    title: 'First jailbreaking paper',
+                    influentialPapers: [
+                        { title: 'Initial jailbreaking research', authors: 'Early researchers', venue: 'arXiv' }
+                    ]
+                },
+                { 
+                    date: '2021-03-15', 
+                    count: 15, 
+                    title: 'Early developments',
+                    influentialPapers: [
+                        { title: 'Prompt Injection Attacks', authors: 'Riley Goodside', venue: 'Blog Post' },
+                        { title: 'Adversarial Examples for Language Models', authors: 'Various', venue: 'arXiv' }
+                    ]
+                },
+                { 
+                    date: '2022-01-10', 
+                    count: 45, 
+                    title: 'Growing interest',
+                    influentialPapers: [
+                        { title: 'Universal Adversarial Triggers', authors: 'Wallace et al.', venue: 'ACL' },
+                        { title: 'Red Teaming Language Models', authors: 'Ganguli et al.', venue: 'Anthropic' }
+                    ]
+                },
+                { 
+                    date: '2022-06-20', 
+                    count: 89, 
+                    title: 'Rapid expansion',
+                    influentialPapers: [
+                        { title: 'Sleeper Agents', authors: 'Hubinger et al.', venue: 'Anthropic' },
+                        { title: 'Indirect Prompt Injection', authors: 'Greshake et al.', venue: 'arXiv' }
+                    ]
+                },
+                { 
+                    date: '2023-01-05', 
+                    count: 156, 
+                    title: 'Mainstream attention',
+                    influentialPapers: [
+                        { title: 'AutoDAN', authors: 'Zou et al.', venue: 'arXiv' },
+                        { title: 'GCG Attack', authors: 'Zou et al.', venue: 'ICLR' }
+                    ]
+                },
+                { 
+                    date: '2023-06-12', 
+                    count: 234, 
+                    title: 'Industry focus',
+                    influentialPapers: [
+                        { title: 'PAIR Attack', authors: 'Chao et al.', venue: 'arXiv' },
+                        { title: 'TAP Attack', authors: 'Robey et al.', venue: 'NeurIPS' }
+                    ]
+                },
+                { 
+                    date: '2024-01-08', 
+                    count: 412, 
+                    title: 'Academic surge',
+                    influentialPapers: [
+                        { title: 'Circuit Breakers', authors: 'Robey et al.', venue: 'ICLR' },
+                        { title: 'Multi-turn Jailbreaking', authors: 'Various', venue: 'Multiple' }
+                    ]
+                },
+                { 
+                    date: '2024-06-15', 
+                    count: 678, 
+                    title: 'Research explosion',
+                    influentialPapers: [
+                        { title: 'Agentic Jailbreaking', authors: 'Multiple groups', venue: 'Various' },
+                        { title: 'Robotics Safety', authors: 'Various', venue: 'Multiple' }
+                    ]
+                },
+                { 
+                    date: '2025-01-03', 
+                    count: 892, 
+                    title: 'Current state',
+                    influentialPapers: [
+                        { title: 'Latest developments', authors: 'Research community', venue: 'Ongoing' }
+                    ]
+                },
+                { 
+                    date: '2025-07-03', 
+                    count: 2121, 
+                    title: 'Latest papers',
+                    influentialPapers: [
+                        { title: 'Future directions', authors: 'Research community', venue: 'Emerging' }
+                    ]
+                }
             ]
         };
 
@@ -109,7 +195,8 @@
         const processedData = sampleData.papers.map(paper => ({
             x: new Date(paper.date),
             y: paper.count,
-            title: paper.title
+            title: paper.title,
+            influentialPapers: paper.influentialPapers
         }));
 
         // Create the chart
@@ -138,6 +225,17 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                onClick: function(event, elements) {
+                    if (elements.length > 0) {
+                        const element = elements[0];
+                        console.log('Chart clicked:', element);
+                        // Access the data index from the Chart.js element
+                        const dataIndex = element.index;
+                        if (typeof dataIndex !== 'undefined') {
+                            showPaperDetails({ dataIndex: dataIndex });
+                        }
+                    }
+                },
                 plugins: {
                     legend: {
                         display: false
@@ -150,6 +248,14 @@
                         borderWidth: 1,
                         cornerRadius: 8,
                         displayColors: false,
+                        titleFont: {
+                            family: 'Palatino, "Palatino Linotype", "Book Antiqua", serif',
+                            size: 14
+                        },
+                        bodyFont: {
+                            family: 'Palatino, "Palatino Linotype", "Book Antiqua", serif',
+                            size: 12
+                        },
                         callbacks: {
                             title: function(context) {
                                 const dataPoint = context[0];
@@ -162,11 +268,25 @@
                             },
                             label: function(context) {
                                 const dataPoint = context[0];
+                                if (!dataPoint || typeof dataPoint.dataIndex === 'undefined') {
+                                    return ['No data available'];
+                                }
                                 const paper = processedData[dataPoint.dataIndex];
-                                return [
+                                const labels = [
                                     `Papers: ${dataPoint.parsed.y}`,
-                                    `Note: ${paper.title}`
+                                    `Period: ${paper.title}`
                                 ];
+                                
+                                // Add influential papers to tooltip
+                                if (paper && paper.influentialPapers && paper.influentialPapers.length > 0) {
+                                    labels.push('', '📚 Influential Papers:');
+                                    paper.influentialPapers.forEach(p => {
+                                        labels.push(`• ${p.title}`);
+                                        labels.push(`  ${p.authors} (${p.venue})`);
+                                    });
+                                }
+                                
+                                return labels;
                             }
                         }
                     }
@@ -177,7 +297,7 @@
                         time: {
                             unit: 'month',
                             displayFormats: {
-                                month: 'MMM yyyy'
+                                month: 'MMM'
                             }
                         },
                         title: {
@@ -185,20 +305,7 @@
                             text: 'Publication Date',
                             color: '#333',
                             font: {
-                                size: 14,
-                                weight: 'bold'
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(0, 0, 0, 0.1)'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Cumulative Number of Papers',
-                            color: '#333',
-                            font: {
+                                family: 'Palatino, "Palatino Linotype", "Book Antiqua", serif',
                                 size: 14,
                                 weight: 'bold'
                             }
@@ -207,7 +314,41 @@
                             color: 'rgba(0, 0, 0, 0.1)'
                         },
                         ticks: {
-                            stepSize: 500
+                            maxTicksLimit: 12,
+                            maxRotation: 0,
+                            stepSize: 6,
+                            font: {
+                                family: 'Palatino, "Palatino Linotype", "Book Antiqua", serif',
+                                size: 12
+                            },
+                            callback: function(value, index, ticks) {
+                                const date = new Date(value);
+                                const month = date.toLocaleDateString('en-US', { month: 'short' });
+                                const year = date.getFullYear();
+                                return [month, year];
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Cumulative Number of Papers',
+                            color: '#333',
+                            font: {
+                                family: 'Palatino, "Palatino Linotype", "Book Antiqua", serif',
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        ticks: {
+                            stepSize: 500,
+                            font: {
+                                family: 'Palatino, "Palatino Linotype", "Book Antiqua", serif',
+                                size: 12
+                            }
                         }
                     }
                 },
@@ -228,6 +369,43 @@
         document.getElementById('dateRange').textContent = '2020-2025';
         document.getElementById('latestPaper').textContent = 'Jul 2025';
 
+        // Functions to handle paper details panel
+        function showPaperDetails(dataPoint) {
+            const panel = document.getElementById('paperDetailsPanel');
+            const content = document.getElementById('panelContent');
+            
+            // Check if dataPoint has the expected structure
+            if (!dataPoint || typeof dataPoint.dataIndex === 'undefined') {
+                console.error('Invalid dataPoint:', dataPoint);
+                return;
+            }
+            
+            const paper = processedData[dataPoint.dataIndex];
+            
+            if (paper && paper.influentialPapers && paper.influentialPapers.length > 0) {
+                content.innerHTML = '';
+                
+                paper.influentialPapers.forEach(p => {
+                    const paperDiv = document.createElement('div');
+                    paperDiv.className = 'paper-item';
+                    paperDiv.innerHTML = `
+                        <div class="paper-title">${p.title}</div>
+                        <div class="paper-authors">${p.authors}</div>
+                        <div class="paper-venue">${p.venue}</div>
+                    `;
+                    content.appendChild(paperDiv);
+                });
+                
+                panel.style.display = 'block';
+            }
+        }
+        
+        function hidePaperDetails() {
+            document.getElementById('paperDetailsPanel').style.display = 'none';
+        }
+        
+
+        
         // Add hover effect for better interactivity
         chart.canvas.addEventListener('mousemove', function(e) {
             const rect = chart.canvas.getBoundingClientRect();
@@ -240,6 +418,16 @@
                 chart.canvas.style.cursor = 'pointer';
             } else {
                 chart.canvas.style.cursor = 'default';
+            }
+        });
+        
+        // Hide panel when clicking outside
+        document.addEventListener('click', function(e) {
+            const panel = document.getElementById('paperDetailsPanel');
+            const chartCanvas = document.getElementById('cumulativeChart');
+            
+            if (!panel.contains(e.target) && !chartCanvas.contains(e.target)) {
+                hidePaperDetails();
             }
         });
     </script>
