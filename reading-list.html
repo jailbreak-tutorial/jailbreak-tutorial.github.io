@@ -80,7 +80,9 @@
 
             div.innerHTML = `
                 <div class="paper-header">
-                    <div class="paper-title">${paper.title}</div>
+                    <div class="paper-title">
+                        <a href="${paper.links.paper}" target="_blank" style="color: inherit; text-decoration: none;">${paper.title}</a>
+                    </div>
                     <div class="paper-meta">
                         <span class="paper-authors">${paper.authors} (${paper.year})</span>
                         <span class="paper-venue">${paper.venue}</span>

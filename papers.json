@@ -13,17 +13,6 @@
       }
     },
     {
-      "title": "Language Models are Few-Shot Learners",
-      "authors": "Brown et al.",
-      "venue": "NeurIPS",
-      "year": 2020,
-      "abstract": "Introduced GPT-3 and demonstrated its capabilities, leading to increased interest in prompt engineering and jailbreaking research.",
-      "categories": ["attack"],
-      "links": {
-        "paper": "https://arxiv.org/abs/2005.14165"
-      }
-    },
-    {
       "title": "Red Teaming Language Models with Language Models",
       "authors": "Perez et al.",
       "venue": "ICLR",
@@ -36,9 +25,20 @@
       }
     },
     {
-      "title": "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+      "title": "Jailbroken: How Does LLM Safety Training Fail?",
+      "authors": "Wei et al.",
+      "venue": "NeurIPS",
+      "year": 2023,
+      "abstract": "Introduced the concept of jailbroken language models, demonstrating how safety training can fail.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2307.02483"
+      }
+    },
+    {
+      "title": "Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
       "authors": "Greshake et al.",
-      "venue": "arXiv",
+      "venue": "AISec",
       "year": 2023,
       "abstract": "Demonstrated how indirect prompt injection attacks could compromise LLM-integrated applications, expanding the scope of jailbreaking research.",
       "categories": ["attack"],
@@ -59,6 +59,17 @@
       }
     },
     {
+      "title": "Baseline Defenses for Adversarial Attacks Against Aligned Language Models",
+      "authors": "Jain et al.",
+      "venue": "arXiv",
+      "year": 2023,
+      "abstract": "Proposed defense mechanisms against jailbreaking attacks, including perplexity filtering and adversarial training.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2309.00614"
+      }
+    },
+    {
       "title": "SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks",
       "authors": "Robey et al.",
       "venue": "TMLR",
@@ -68,17 +79,6 @@
       "links": {
         "paper": "https://arxiv.org/abs/2310.03684",
         "code": "https://github.com/arobey1/smooth-llm"
-      }
-    },
-    {
-      "title": "Defending Against Alignment-Breaking Attacks via Robustly Aligned LLM",
-      "authors": "Jain et al.",
-      "venue": "arXiv",
-      "year": 2023,
-      "abstract": "Proposed defense mechanisms against jailbreaking attacks, marking a shift towards more robust safety measures.",
-      "categories": ["defense"],
-      "links": {
-        "paper": "https://arxiv.org/abs/2309.14348"
       }
     },
     {
@@ -94,6 +94,18 @@
       }
     },
     {
+      "title": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "authors": "Mazeika et al.",
+      "venue": "ICML",
+      "year": 2024,
+      "abstract": "Introduced a standardized evaluation framework for automated red teaming and robust refusal, providing a benchmark for evaluating the robustness of LLMs.",
+      "categories": ["benchmark"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2402.04249",
+        "code": "https://github.com/centerforaisafety/HarmBench"
+      }
+    },
+    {
       "title": "JailbreakBench: An Open Benchmark for Jailbreaking Large Language Models",
       "authors": "Chao et al.",
       "venue": "NeurIPS",
@@ -106,14 +118,39 @@
       }
     },
     {
-      "title": "Jailbreaking as a Reward Misspecification Problem",
-      "authors": "Rafailov et al.",
-      "venue": "arXiv",
+      "title": "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+      "authors": "Andriushchenko et al.",
+      "venue": "ICLR",
       "year": 2024,
-      "abstract": "Framed jailbreaking as a reward misspecification problem, providing new insights into the fundamental causes of alignment failures.",
+      "abstract": "Introduced a simple adaptive attack that can jailbreak leading safety-aligned LLMs.",
       "categories": ["attack"],
       "links": {
-        "paper": "https://arxiv.org/abs/2402.16427"
+        "paper": "https://arxiv.org/abs/2404.02151",
+        "code": "https://github.com/tml-epfl/llm-adaptive-attacks"
+      }
+    },
+    {
+      "title": "Improving Alignment and Robustness with Circuit Breakers",
+      "authors": "Zou et al.",
+      "venue": "NeurIPS",
+      "year": 2024,
+      "abstract": "Proposed the circuit breaker defense that uses representation engineering to fine-tune LLMs to be more robust against jailbreaking attacks.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2406.04313",
+        "code": "https://github.com/GraySwanAI/circuit-breakers"
+      }
+    },
+    {
+      "title": "Jailbreaking LLM-Controlled Robots",
+      "authors": "Robey et al.",
+      "venue": "ICRA",
+      "year": 2024,
+      "abstract": "Demonstrated that robots controlled by LLMs can be jailbroken to perform dangerous actions in the physical world.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2410.13691",
+        "code": "https://github.com/arobey1/robopair"
       }
     }
   ]
