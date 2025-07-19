@@ -12,6 +12,16 @@ body {
     background-color: var(--light-gray);
 }
 
+/* Ensure all elements inherit Palatino font */
+* {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+/* Override Bulma's default font for specific elements */
+.navbar, .navbar-item, .nav-link, .button, .tag, .timeline-item, .paper-title, .paper-meta, .paper-abstract, .paper-links, .filter-button, .timeline-year {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+}
+
 .hero {
     background-color: var(--light-gray);
     padding: 2.5rem 1.5rem 0;
@@ -38,7 +48,7 @@ body {
     color: var(--text-color);
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .abstract {
@@ -109,7 +119,7 @@ body {
 .timeline-container {
     width: 100%;
     background-color: var(--light-gray);
-    padding: 2rem 0;
+    padding: 1rem 0;
     overflow-x: hidden;
     position: relative;
 }
@@ -125,8 +135,8 @@ body {
     top: 0;
     z-index: 100;
     background-color: var(--light-gray);
-    padding: 1rem 0;
-    margin-bottom: 2rem;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
     /* border-bottom: 1px solid rgba(0,0,0,0.1); */
 }
 
@@ -171,14 +181,17 @@ body {
 }
 
 .timeline-item {
-    flex: 0 0 300px;
+    flex: 0 0 220px;
     background: white;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1.25rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: relative;
     margin-bottom: 1rem;
     border: 1px solid rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
 }
 
 .timeline-item::after {
@@ -210,6 +223,13 @@ body {
     display: none;
 }
 
+.paper-header {
+    background-color: #f8f8f8;
+    margin: -1.25rem -1.25rem 0.75rem -1.25rem;
+    padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+    border-radius: 8px 8px 0 0;
+}
+
 .paper-title {
     color: var(--primary-orange);
     font-size: 1.0rem;
@@ -221,9 +241,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
     color: #666;
     font-size: 0.9rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .paper-authors {
@@ -242,15 +264,21 @@ body {
 }
 
 .paper-abstract {
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-size: 0.8rem;
+    line-height: 1.3;
     margin-bottom: 0.75rem;
+    padding-bottom: 5rem;
 }
 
 .paper-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
 }
 
 .paper-link {
@@ -258,6 +286,7 @@ body {
     color: var(--primary-orange);
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.8rem;
 }
 
 .paper-link:hover {
@@ -326,9 +355,13 @@ em strong {
 }
 
 .paper-tags {
-    margin: 1rem 0;
+    margin: 0;
     display: flex;
     gap: 0.5rem;
+    position: absolute;
+    bottom: 3.5rem;
+    left: 1.25rem;
+    right: 1.25rem;
 }
 
 .tag {
