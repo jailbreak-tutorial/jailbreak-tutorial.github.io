@@ -1,18 +1,6 @@
 {
   "papers": [
     {
-      "title": "Universal Adversarial Triggers for Attacking and Analyzing NLP",
-      "authors": "Wallace et al.",
-      "venue": "EMNLP",
-      "year": 2019,
-      "abstract": "One of the first papers to demonstrate how universal adversarial triggers could be used to manipulate language models, laying groundwork for jailbreaking research.",
-      "categories": ["attack"],
-      "links": {
-        "paper": "https://arxiv.org/abs/1908.07125",
-        "code": "https://github.com/Eric-Wallace/universal-triggers"
-      }
-    },
-    {
       "title": "Red Teaming Language Models with Language Models",
       "authors": "Perez et al.",
       "venue": "ICLR",
@@ -36,14 +24,15 @@
       }
     },
     {
-      "title": "Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
-      "authors": "Greshake et al.",
-      "venue": "AISec",
+      "title": "Do Anything Now: Characterizing and Evaluating In-The-Wild Jailbreak Prompts on LLMs",
+      "authors": "Shen et al.",
+      "venue": "ACM CCS",
       "year": 2023,
-      "abstract": "Demonstrated how indirect prompt injection attacks could compromise LLM-integrated applications, expanding the scope of jailbreaking research.",
+      "abstract": "Characterized and evaluated in-the-wild jailbreak prompts on LLMs, providing insights into the effectiveness of jailbreak prompts.",
       "categories": ["attack"],
       "links": {
-        "paper": "https://arxiv.org/abs/2302.12173"
+        "paper": "https://arxiv.org/abs/2308.03825",
+        "code": "https://github.com/verazuo/jailbreak_llms"
       }
     },
     {
@@ -52,10 +41,46 @@
       "venue": "arXiv",
       "year": 2023,
       "abstract": "Introduced the concept of universal adversarial suffixes that could jailbreak multiple aligned language models simultaneously.",
-      "categories": ["attack"],
+      "categories": ["attack", "benchmark"],
       "links": {
         "paper": "https://arxiv.org/abs/2307.15043",
         "code": "https://github.com/andyzoujm/universal-llm-attack"
+      }
+    },
+    {
+      "title": "Jailbreaking Black Box LLMs in Twenty Queries",
+      "authors": "Chao et al.",
+      "venue": "SaTML",
+      "year": 2023,
+      "abstract": "Demonstrated efficient black-box jailbreaking methods that could bypass safety measures with minimal queries.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2310.08419",
+        "code": "https://github.com/patrickrchao/JailbreakingLLMs"
+      }
+    },
+    {
+      "title": "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+      "authors": "Mehrotra et al.",
+      "venue": "NeurIPS",
+      "year": 2024,
+      "abstract": "Introduced Tree of Attacks with Pruning (TAP), an automated method for generating jailbreaks that only requires black-box access to the target LLM, achieving over 80% success rate on state-of-the-art LLMs.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2312.02119",
+        "code": "https://github.com/RICommunity/TAP"
+      }
+    },
+    {
+      "title": "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+      "authors": "Liu et al.",
+      "venue": "ICLR",
+      "year": 2024,
+      "abstract": "Introduced AutoDAN, a hierarchical genetic algorithm that automatically generates stealthy jailbreak prompts while preserving semantic meaningfulness and bypassing perplexity-based defenses.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2310.04451",
+        "code": "https://github.com/SheltonLiu-N/AutoDAN"
       }
     },
     {
@@ -82,18 +107,6 @@
       }
     },
     {
-      "title": "Jailbreaking Black Box Large Language Models in Twenty Queries",
-      "authors": "Chao et al.",
-      "venue": "SaTML",
-      "year": 2023,
-      "abstract": "Demonstrated efficient black-box jailbreaking methods that could bypass safety measures with minimal queries.",
-      "categories": ["attack"],
-      "links": {
-        "paper": "https://arxiv.org/abs/2310.08419",
-        "code": "https://github.com/patrickrchao/JailbreakingLLMs"
-      }
-    },
-    {
       "title": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
       "authors": "Mazeika et al.",
       "venue": "ICML",
@@ -106,7 +119,7 @@
       }
     },
     {
-      "title": "JailbreakBench: An Open Benchmark for Jailbreaking Large Language Models",
+      "title": "JailbreakBench: An Open Benchmark for Jailbreaking LLMs",
       "authors": "Chao et al.",
       "venue": "NeurIPS",
       "year": 2024,
@@ -142,6 +155,64 @@
       }
     },
     {
+      "title": "Many-Shot Jailbreaking",
+      "authors": "Anil et al.",
+      "venue": "NeurIPS",
+      "year": 2024,
+      "abstract": "Introduced many-shot jailbreaking, a technique that leverages large numbers of examples to bypass safety measures in language models.",
+      "categories": ["attack"],
+      "links": {
+        "paper": "https://proceedings.neurips.cc/paper_files/paper/2024/file/ea456e232efb72d261715e33ce25f208-Paper-Conference.pdf"
+      }
+    },
+    {
+      "title": "Constitutional Classifiers: Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming",
+      "authors": "Sharma et al.",
+      "venue": "arXiv",
+      "year": 2025,
+      "abstract": "Introduced Constitutional Classifiers, safeguards trained on synthetic data generated by prompting LLMs with natural language rules to defend against universal jailbreaks while maintaining deployment viability.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2501.18837"
+      }
+    },
+    {
+      "title": "Latent Adversarial Training Improves Robustness to Persistent Harmful Behaviors in LLMs",
+      "authors": "Sheshadri et al.",
+      "venue": "arXiv",
+      "year": 2024,
+      "abstract": "Introduced targeted latent adversarial training (LAT) to improve robustness to jailbreaks, remove backdoors without trigger knowledge, and unlearn undesirable knowledge more effectively than existing methods.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2407.15549",
+        "code": "https://github.com/aengusl/latent-adversarial-training"
+      }
+    },
+    {
+      "title": "AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents",
+      "authors": "Andriushchenko et al.",
+      "venue": "ICLR",
+      "year": 2025,
+      "abstract": "Introduced AgentHarm, a benchmark containing malicious agent tasks covering eleven harm categories to evaluate LLM agent misuse and jailbreaking effectiveness.",
+      "categories": ["benchmark"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2410.09024",
+        "code": "https://huggingface.co/datasets/ai-safety-institute/AgentHarm"
+      }
+    },
+    {
+      "title": "StrongREJECT: Jailbreaking Large Language Models in Few Queries via Strong Rejection",
+      "authors": "Souly et al.",
+      "venue": "NeurIPS",
+      "year": 2024,
+      "abstract": "Introduced StrongREJECT, a benchmark to evaluate the harmfulness and specificity of responses returned by jailbroken LLMs.",
+      "categories": ["benchmark"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2402.10260",
+        "code": "https://github.com/alexandrasouly/strongreject"
+      }
+    },
+    {
       "title": "Jailbreaking LLM-Controlled Robots",
       "authors": "Robey et al.",
       "venue": "ICRA",
@@ -151,6 +222,28 @@
       "links": {
         "paper": "https://arxiv.org/abs/2410.13691",
         "code": "https://github.com/arobey1/robopair"
+      }
+    },
+    {
+      "title": "Deliberative Alignment: Reasoning Enables Safer Language Models",
+      "authors": "Guan et al.",
+      "venue": "arXiv",
+      "year": 2024,
+      "abstract": "Introduced deliberative alignment, a paradigm that teaches models safety specifications and trains them to reason over these specifications before answering.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2412.16339"
+      }
+    },
+    {
+      "title": "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions",
+      "authors": "Wallace et al.",
+      "venue": "arXiv",
+      "year": 2024,
+      "abstract": "Proposed an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict, teaching LLMs to selectively ignore lower-privileged instructions.",
+      "categories": ["defense"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2404.13208"
       }
     }
   ]
