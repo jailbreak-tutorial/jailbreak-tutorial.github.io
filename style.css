@@ -31,6 +31,11 @@ body {
     flex: 1;
 }
 
+/* Variant for pages where content should sit near the top under the header */
+.hero--no-flex {
+    flex: 0;
+}
+
 .main-title {
     color: var(--primary-orange);
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -112,6 +117,9 @@ body {
     background-color: var(--light-gray);
     padding: 1.5rem 1.5rem;
     margin-top: 0;
+}
+.page-spacer {
+    flex: 1 1 auto;
 }
 
 .content {
@@ -815,4 +823,72 @@ em strong {
 
 .search-category li:last-child {
     margin-bottom: 0;
+}
+
+/* Monthly Navigation Styles */
+.monthly-nav {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem;
+    position: sticky;
+    top: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.monthly-nav h5 {
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.monthly-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.monthly-nav-item {
+    font-size: 0.85rem;
+}
+
+.monthly-nav-item a {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.monthly-nav-item a:hover {
+    background-color: var(--primary-orange);
+    color: white;
+    text-decoration: none;
+}
+
+.monthly-nav-item a:active {
+    transform: translateY(1px);
+}
+
+/* Responsive adjustments for monthly nav */
+@media (max-width: 768px) {
+    .monthly-nav {
+        position: static;
+        max-height: none;
+        margin-top: 1rem;
+    }
+    
+    .monthly-nav-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+    
+    .monthly-nav-item a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+    }
 }

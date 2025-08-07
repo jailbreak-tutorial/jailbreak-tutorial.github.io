@@ -5,6 +5,7 @@
       "authors": "Perez et al.",
       "venue": "ICLR",
       "year": 2022,
+      "month": "February",
       "abstract": "Introduced the concept of using language models to automatically discover adversarial prompts, significantly advancing jailbreaking techniques.",
       "categories": ["attack"],
       "links": {
@@ -17,6 +18,7 @@
       "authors": "Wei et al.",
       "venue": "NeurIPS",
       "year": 2023,
+      "month": "July",
       "abstract": "Introduced the concept of jailbroken language models, demonstrating how safety training can fail.",
       "categories": ["attack"],
       "links": {
@@ -28,6 +30,7 @@
       "authors": "Shen et al.",
       "venue": "ACM CCS",
       "year": 2023,
+      "month": "August",
       "abstract": "Characterized and evaluated in-the-wild jailbreak prompts on LLMs, providing insights into the effectiveness of jailbreak prompts.",
       "categories": ["attack"],
       "links": {
@@ -40,6 +43,7 @@
       "authors": "Zou et al.",
       "venue": "arXiv",
       "year": 2023,
+      "month": "July",
       "abstract": "Introduced the concept of universal adversarial suffixes that could jailbreak multiple aligned language models simultaneously.",
       "categories": ["attack", "benchmark"],
       "links": {
@@ -52,6 +56,7 @@
       "authors": "Chao et al.",
       "venue": "SaTML",
       "year": 2023,
+      "month": "October",
       "abstract": "Demonstrated efficient black-box jailbreaking methods that could bypass safety measures with minimal queries.",
       "categories": ["attack"],
       "links": {
@@ -63,7 +68,8 @@
       "title": "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
       "authors": "Mehrotra et al.",
       "venue": "NeurIPS",
-      "year": 2024,
+      "year": 2023,
+      "month": "December",
       "abstract": "Introduced Tree of Attacks with Pruning (TAP), an automated method for generating jailbreaks that only requires black-box access to the target LLM, achieving over 80% success rate on state-of-the-art LLMs.",
       "categories": ["attack"],
       "links": {
@@ -75,7 +81,8 @@
       "title": "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
       "authors": "Liu et al.",
       "venue": "ICLR",
-      "year": 2024,
+      "year": 2023,
+      "month": "October",
       "abstract": "Introduced AutoDAN, a hierarchical genetic algorithm that automatically generates stealthy jailbreak prompts while preserving semantic meaningfulness and bypassing perplexity-based defenses.",
       "categories": ["attack"],
       "links": {
@@ -88,6 +95,7 @@
       "authors": "Jain et al.",
       "venue": "arXiv",
       "year": 2023,
+      "month": "September",
       "abstract": "Proposed defense mechanisms against jailbreaking attacks, including perplexity filtering and adversarial training.",
       "categories": ["defense"],
       "links": {
@@ -99,6 +107,7 @@
       "authors": "Robey et al.",
       "venue": "TMLR",
       "year": 2023,
+      "month": "October",
       "abstract": "Proposed a novel defense mechanism that uses randomized smoothing to make language models robust against jailbreaking attacks.",
       "categories": ["defense"],
       "links": {
@@ -111,6 +120,7 @@
       "authors": "Mazeika et al.",
       "venue": "ICML",
       "year": 2024,
+      "month": "February",
       "abstract": "Introduced a standardized evaluation framework for automated red teaming and robust refusal, providing a benchmark for evaluating the robustness of LLMs.",
       "categories": ["benchmark"],
       "links": {
@@ -123,6 +133,7 @@
       "authors": "Chao et al.",
       "venue": "NeurIPS",
       "year": 2024,
+      "month": "March",
       "abstract": "A comprehensive benchmark for evaluating jailbreaking attacks and defenses across multiple LLMs.",
       "categories": ["benchmark"],
       "links": {
@@ -135,6 +146,7 @@
       "authors": "Andriushchenko et al.",
       "venue": "ICLR",
       "year": 2024,
+      "month": "April",
       "abstract": "Introduced a simple adaptive attack that can jailbreak leading safety-aligned LLMs.",
       "categories": ["attack"],
       "links": {
@@ -147,6 +159,7 @@
       "authors": "Zou et al.",
       "venue": "NeurIPS",
       "year": 2024,
+      "month": "June",
       "abstract": "Proposed the circuit breaker defense that uses representation engineering to fine-tune LLMs to be more robust against jailbreaking attacks.",
       "categories": ["defense"],
       "links": {
@@ -159,6 +172,7 @@
       "authors": "Anil et al.",
       "venue": "NeurIPS",
       "year": 2024,
+      "month": "April",
       "abstract": "Introduced many-shot jailbreaking, a technique that leverages large numbers of examples to bypass safety measures in language models.",
       "categories": ["attack"],
       "links": {
@@ -170,6 +184,7 @@
       "authors": "Sharma et al.",
       "venue": "arXiv",
       "year": 2025,
+      "month": "February",
       "abstract": "Introduced Constitutional Classifiers, safeguards trained on synthetic data generated by prompting LLMs with natural language rules to defend against universal jailbreaks while maintaining deployment viability.",
       "categories": ["defense"],
       "links": {
@@ -181,6 +196,7 @@
       "authors": "Sheshadri et al.",
       "venue": "arXiv",
       "year": 2024,
+      "month": "July",
       "abstract": "Introduced targeted latent adversarial training (LAT) to improve robustness to jailbreaks, remove backdoors without trigger knowledge, and unlearn undesirable knowledge more effectively than existing methods.",
       "categories": ["defense"],
       "links": {
@@ -192,7 +208,8 @@
       "title": "AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents",
       "authors": "Andriushchenko et al.",
       "venue": "ICLR",
-      "year": 2025,
+      "year": 2024,
+      "month": "October",
       "abstract": "Introduced AgentHarm, a benchmark containing malicious agent tasks covering eleven harm categories to evaluate LLM agent misuse and jailbreaking effectiveness.",
       "categories": ["benchmark"],
       "links": {
@@ -205,6 +222,7 @@
       "authors": "Souly et al.",
       "venue": "NeurIPS",
       "year": 2024,
+      "month": "February",
       "abstract": "Introduced StrongREJECT, a benchmark to evaluate the harmfulness and specificity of responses returned by jailbroken LLMs.",
       "categories": ["benchmark"],
       "links": {
@@ -217,6 +235,7 @@
       "authors": "Robey et al.",
       "venue": "ICRA",
       "year": 2024,
+      "month": "October",
       "abstract": "Demonstrated that robots controlled by LLMs can be jailbroken to perform dangerous actions in the physical world.",
       "categories": ["attack"],
       "links": {
@@ -229,6 +248,7 @@
       "authors": "Guan et al.",
       "venue": "arXiv",
       "year": 2024,
+      "month": "December",
       "abstract": "Introduced deliberative alignment, a paradigm that teaches models safety specifications and trains them to reason over these specifications before answering.",
       "categories": ["defense"],
       "links": {
@@ -240,10 +260,23 @@
       "authors": "Wallace et al.",
       "venue": "arXiv",
       "year": 2024,
+      "month": "April",
       "abstract": "Proposed an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict, teaching LLMs to selectively ignore lower-privileged instructions.",
       "categories": ["defense"],
       "links": {
         "paper": "https://arxiv.org/abs/2404.13208"
+      }
+    },
+    {
+      "title": "Benchmarking Misuse Mitigation Against Covert Adversaries",
+      "authors": "Brown et al.",
+      "venue": "arXiv",
+      "year": 2025,
+      "month": "June",
+      "abstract": "Introduced a benchmark for evaluating misuse mitigation against covert adversaries, providing insights into the effectiveness of misuse mitigation techniques.",
+      "categories": ["benchmark"],
+      "links": {
+        "paper": "https://arxiv.org/abs/2506.06414"
       }
     }
   ]

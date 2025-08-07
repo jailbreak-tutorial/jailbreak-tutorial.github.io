@@ -24,25 +24,18 @@ class JailbreakingPaperScraper:
         self.search_terms = {
             'jailbreaking': [
                 'jailbreak', 'jailbreaking', 'jail break', 'jail-breaking',
-                'adversarial prompt', 'adversarial attack', 'prompt injection',
-                'indirect prompt injection', 'universal adversarial trigger',
-                'alignment breaking', 'safety bypass', 'red teaming'
+                'adversarial prompt', 'prompt injection', "prompt hacking",
+                'universal adversarial trigger', 'alignment breaking', 'universal adversarial', 'transferable adversarial', 'red team', 'red-teaming', 'red teaming'
             ],
             'prompt_engineering': [
-                'prompt engineering', 'prompt injection', 'prompt hacking',
-                'prompt manipulation', 'prompt attack', 'prompt security'
-            ],
-            'adversarial_attacks': [
-                'adversarial attack', 'adversarial prompt', 'adversarial example',
-                'universal adversarial', 'transferable adversarial'
+                'prompt injection', 'prompt hacking', 'prompt manipulation', 'prompt attack', 'prompt security', 'adversarial prompt'
             ],
             'safety_alignment': [
-                'AI safety', 'alignment', 'safety bypass', 'safety violation',
-                'harmful content', 'safety evaluation', 'robustness'
+                'AI safety', 'alignment', 'safety bypass', 'safety training', 'safety fine-tuning', 'safety alignment'
             ],
-            'red_teaming': [
-                'red team', 'red-teaming', 'red teaming', 'adversarial testing',
-                'safety testing', 'vulnerability assessment'
+            'benchmark_evaluation': [
+                'jailbreak benchmark', 'safety evaluation', 'robustness evaluation',
+                'adversarial evaluation'
             ]
         }
         

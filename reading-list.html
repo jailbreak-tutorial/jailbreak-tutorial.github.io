@@ -18,9 +18,7 @@
                 <div class="navbar-item">
                     <a href="reading-list.html" class="nav-link">Reading List</a>
                 </div>
-                <div class="navbar-item">
-                    <a href="paper-tracker.html" class="nav-link">Paper Tracker</a>
-                </div>
+                
                 <div class="navbar-item">
                     <a href="files/jailbreaking-tutorial.pdf" class="nav-link" target="_blank">Tutorial PDF</a>
                 </div>
@@ -28,37 +26,39 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero hero--no-flex">
         <div class="container">
             <h1 class="main-title has-text-centered">Influential Papers in LLM Jailbreaking</h1>
             <p class="conference-title has-text-centered">A chronological timeline of key research</p>
         </div>
-    </section>
-
-    <div class="timeline-container">
-        <div class="container">
-            <div class="filter-buttons has-text-centered">
-                <button class="filter-button is-active" data-category="all">All Papers</button>
-                <button class="filter-button" data-category="attack">Attacks</button>
-                <button class="filter-button" data-category="defense">Defenses</button>
-                <button class="filter-button" data-category="benchmark">Benchmarks</button>
-            </div>
-            <div class="timeline-wrapper">
-                <div class="timeline" id="timeline">
-                    <!-- Papers will be loaded here dynamically -->
+        <div class="timeline-container" style="margin-top: 0;">
+            <div class="container">
+                <div class="filter-buttons has-text-centered">
+                    <button class="filter-button is-active" data-category="all">All Papers</button>
+                    <button class="filter-button" data-category="attack">Attacks</button>
+                    <button class="filter-button" data-category="defense">Defenses</button>
+                    <button class="filter-button" data-category="benchmark">Benchmarks</button>
                 </div>
-                <div class="timeline-years" id="timeline-years">
-                    <!-- Year indicators will be added here dynamically -->
+                <div class="timeline-wrapper">
+                    <div class="timeline" id="timeline">
+                        <!-- Papers will be loaded here dynamically -->
+                    </div>
+                    <div class="timeline-years" id="timeline-years">
+                        <!-- Year indicators will be added here dynamically -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Flexible spacer to keep footer anchored to bottom while content stays near top -->
+    <div class="page-spacer"></div>
 
     <footer class="footer">
-        <div class="container">
-            <div class="content has-text-centered">
-                <p>Jailbreaking LLMs and Agentic Systems - ICML 2025 Tutorial</p>
-            </div>
+        <div class="content has-text-centered">
+            <p>
+                <strong>Jailbreaking LLMs and Agentic Systems</strong> - ICML 2025 Tutorial
+            </p>
         </div>
     </footer>
 
